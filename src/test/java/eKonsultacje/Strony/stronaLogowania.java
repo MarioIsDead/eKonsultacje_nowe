@@ -24,7 +24,7 @@ public class stronaLogowania {
         login.click();
         login.sendKeys("administrator@sputnik.pl");
         password.click();
-        password.sendKeys("MHPpwrpBauI7bswS");
+        password.sendKeys("*************");
         zaloguj.click();
     }
 }
