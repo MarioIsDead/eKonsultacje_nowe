@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 public class NowaKonsultacjaOtwartaAnkieta extends Bazowa {
 
     @Test
-    public void logowanieUsera() throws InterruptedException, AWTException {
+    public void logowanieUsera() throws AWTException {
         driver.get("http://ekonsultacje.eboi.pl:5004");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
@@ -24,7 +24,7 @@ public class NowaKonsultacjaOtwartaAnkieta extends Bazowa {
         roboczaKonsultacja.otwarty();
         roboczaKonsultacja.grupySpoleczne();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");

@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import java.util.Random;
 
 public class MainPageBudzet extends Bazowa {
@@ -24,62 +23,81 @@ public class MainPageBudzet extends Bazowa {
     @FindBy(id = "officeId")
     WebElement jednostkaList;
 
-    @FindBy (xpath = "//select[@id=\'budgetYearId\']")
+    @FindBy(xpath = "//select[@id='budgetYearId']")
     WebElement rokBudzetowyInput;
 
-    @FindBy (xpath = "//textarea[@id='description']")
+    @FindBy(xpath = "//textarea[@id='description']")
     WebElement opisInput;
 
-    @FindBy (id = "status")
+    @FindBy(id = "status")
     WebElement statusList;
 
-    @FindBy (xpath = "//button[@class='btn-icon mr-2 btn btn-primary']")
+    @FindBy(xpath = "//button[@class='btn-icon mr-2 btn btn-primary']")
     WebElement zapiszButton;
+
+    @FindBy(xpath = "//tbody//tr[1]//td[2]")
+    WebElement nazwaBudzetuTabela;
+
+    @FindBy(xpath = "//a[contains(text(),'osowania')]")
+    WebElement glosowaniaMenu;
+
+    @FindBy (xpath = "//button[@class='mb-2 mr-2 btn-icon btn btn-success']")
+    WebElement noweGlosowanietButton;
+
+    @FindBy (xpath = "//select[@id='budgetId']")
+    WebElement budzetLista;
 
     public SeleniumHelper helper;
 
     public MainPageBudzet(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.helper= new SeleniumHelper(driver);
+        this.helper = new SeleniumHelper(driver);
     }
 
-    public void roboczyBudzet () {
+    public void roboczyBudzet() {
         nowyBudzetButton.click();
     }
-    public void nazwaBudzetu () {
+
+    public void nazwaBudzetu() {
         Random ran = new Random();
         int nxt = ran.nextInt(999999);
-        nazwaBudzetuInput.sendKeys("budzet"+nxt);
-        }
-    public void pobieranieNazwyBudzetu () {
-        WebElement nazwaBudzetu1 = driver.findElement(By.cssSelector(""));
-        String innerText= nazwaBudzetu1.getText();
-        //System.out.println("Inner text is :"+innerText);
-        }
+        nazwaBudzetuInput.sendKeys("budzet" + nxt);
+    }
 
-    public void jednostka () {
+    public void jednostka() {
         jednostkaList.click();
         jednostkaList.sendKeys(Keys.PAGE_DOWN);
         jednostkaList.sendKeys(Keys.ENTER);
-        }
+    }
 
-    public void rokBudzetowy () {
+    public void rokBudzetowy() {
         rokBudzetowyInput.click();
-        rokBudzetowyInput.sendKeys(Keys.DOWN);
+        rokBudzetowyInput.sendKeys("2050");
         rokBudzetowyInput.sendKeys(Keys.ENTER);
     }
-    public void opis (String opis1) {
+
+    public void opis(String opis1) {
         opisInput.click();
         opisInput.sendKeys(opis1);
     }
-    public void status () {
+
+    public void status() {
         statusList.click();
         statusList.sendKeys(Keys.DOWN);
         statusList.sendKeys(Keys.ENTER);
     }
-    public void zapisz () {
+
+    public void zapisz() {
         zapiszButton.click();
     }
+
+    public void glosowanieNazwaBudzetu() {
+        String nazwaBudzetu = nazwaBudzetuTabela.getText();
+        glosowaniaMenu.click();
+        noweGlosowanietButton.click();
+        new Select(budzetLista).selectByVisibleText(nazwaBudzetu);
+    }
+
     public void sprawdzanieStatusuBudzet (){
         Assert.assertEquals(driver.findElement(By.xpath("//tbody//tr[1]//td[5]")).getText(), "Roboczy");
     }

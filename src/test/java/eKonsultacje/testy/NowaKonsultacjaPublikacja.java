@@ -20,7 +20,7 @@ public class NowaKonsultacjaPublikacja extends Bazowa {
         logowanie.zalogowanie();
         MainPage konsultacjeMenu = new MainPage(driver);
         konsultacjeMenu.konsultacjeLink();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Assert.assertEquals(driver.findElement(By.xpath("//tbody//tr[1]//td[7]")).getText(), "Roboczy");
         konsultacjeMenu.statusSondy();
         JavascriptExecutor js = (JavascriptExecutor) driver;

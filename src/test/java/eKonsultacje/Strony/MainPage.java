@@ -26,6 +26,12 @@ public class MainPage extends Bazowa {
     @FindBy(xpath = "//a[@href='/budzety'][text()='Budżet']")
     WebElement budzetButton;
 
+    @FindBy(xpath = "//th[4]//div[1]//input[1]")
+    WebElement lataBudzetoweTabelaInput;
+
+    @FindBy (xpath = "//button[@class='mb-2 mr-2 btn-icon btn btn-info']")
+    WebElement odswiezButton;
+
     @FindBy(xpath = "//button[@class='mb-2 mr-2 btn-icon btn btn-success']")
     WebElement konsultacjeButtonNew;
 
@@ -80,6 +86,15 @@ public class MainPage extends Bazowa {
     By latabudzetowe = By.xpath("//a[@href='/budzety'][text()='Budżet']");
       helper.waitForElementToBeDisplayed(latabudzetowe);
       budzetButton.click();
+    }
+
+    public void rokBudzetowyTabela (String dataLataBudzetowe) {
+        lataBudzetoweTabelaInput.click();
+        lataBudzetoweTabelaInput.sendKeys(dataLataBudzetowe);
+    }
+
+    public void odswiez () {
+        odswiezButton.click();
     }
 
     public void statusBudzetu() {

@@ -20,9 +20,10 @@ public class NowaKonsultacjaMieszkaniecAnkieta extends Bazowa {
         roboczaKonsultacja.nowaKonsultacjaAnkieta();
         roboczaKonsultacja.tylkoDlaMieszkanca();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.obszar();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
-        roboczaKonsultacja.dataRozpoczeciaProjektu("2019-12-24","2019-12-30");
+        roboczaKonsultacja.dataRozpoczeciaProjektu("2020-02-12","2020-02-29");
         roboczaKonsultacja.regulamin();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
@@ -31,7 +32,7 @@ public class NowaKonsultacjaMieszkaniecAnkieta extends Bazowa {
         roboczaKonsultacja.ankieta();
         roboczaKonsultacja.ankietaRobocza();
         roboczaKonsultacja.opisAnkiety();
-        roboczaKonsultacja.dataRozpoczeciaGlosowania("2019-12-24","2019-12-30");
+        roboczaKonsultacja.dataRozpoczeciaGlosowania("2020-02-12","2020-02-29");
         roboczaKonsultacja.pytanie();
         roboczaKonsultacja.prosteRadio();
         roboczaKonsultacja.pytaniePierwsze("Czy zgadzasz się na... ?");

@@ -8,7 +8,7 @@ import java.awt.*;
 public class NowaKonsultacjaOtwartaKomentarz extends Bazowa {
 
     @Test
-    public void logowanieUsera() throws InterruptedException, AWTException {
+    public void logowanieUsera() {
         driver.get("http://ekonsultacje.eboi.pl:5004");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
@@ -20,7 +20,7 @@ public class NowaKonsultacjaOtwartaKomentarz extends Bazowa {
         roboczaKonsultacja.tylkoDlaMieszkanca();
         roboczaKonsultacja.grupySpoleczne();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
         roboczaKonsultacja.dataRozpoczeciaProjektu("2019-07-26","2019-07-30");
         roboczaKonsultacja.regulamin();

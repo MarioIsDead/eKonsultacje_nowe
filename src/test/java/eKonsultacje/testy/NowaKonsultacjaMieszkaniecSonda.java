@@ -21,9 +21,10 @@ public class NowaKonsultacjaMieszkaniecSonda extends Bazowa {
         roboczaKonsultacja.tylkoDlaMieszkanca();
         roboczaKonsultacja.grupySpoleczne();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.obszar();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
-        roboczaKonsultacja.dataRozpoczeciaProjektu("2019-08-09","2019-08-30");
+        roboczaKonsultacja.dataRozpoczeciaProjektu("2020-02-12","2020-02-29");
         roboczaKonsultacja.regulamin();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,800)");
@@ -39,9 +40,10 @@ public class NowaKonsultacjaMieszkaniecSonda extends Bazowa {
         roboczaKonsultacja.odpowiedz();
         roboczaKonsultacja.odpowiedz2Input2("Nie");
         roboczaKonsultacja.kolejnaOdpowiedz();
-        roboczaKonsultacja.zapisz();
-        roboczaKonsultacja.sondaPublikuj();
         js.executeScript("window.scrollBy(0,500)");
+        roboczaKonsultacja.zapisz();
+        Thread.sleep(1000);
+        roboczaKonsultacja.sondaPublikuj();
         roboczaKonsultacja.utworz();
        }
 }

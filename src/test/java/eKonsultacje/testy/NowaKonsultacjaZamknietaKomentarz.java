@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class NowaKonsultacjaZamknietaKomentarz extends Bazowa {
 
     @Test
-    public void logowanieUsera() throws InterruptedException{
+    public void logowanieUsera() {
         driver.get("http://ekonsultacje.eboi.pl:5004");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
@@ -20,7 +20,7 @@ public class NowaKonsultacjaZamknietaKomentarz extends Bazowa {
         roboczaKonsultacja.otwarty();
         roboczaKonsultacja.grupySpoleczne();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
         roboczaKonsultacja.dataRozpoczeciaProjektu("2019-05-09","2019-05-30");
         roboczaKonsultacja.nowaForma();

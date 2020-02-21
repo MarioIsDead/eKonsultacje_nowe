@@ -21,10 +21,11 @@ public class NowaKonsultacjaMieszkaniecKomentarz extends Bazowa {
         roboczaKonsultacja.tylkoDlaMieszkanca();
         roboczaKonsultacja.grupySpoleczne();
         roboczaKonsultacja.jednostka();
-        roboczaKonsultacja.obszarTematyczny();
+        roboczaKonsultacja.obszar();
+        roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,700)");
+        js.executeScript("window.scrollBy(0,900)");
         roboczaKonsultacja.nowaForma();
         roboczaKonsultacja.komentarz();
         roboczaKonsultacja.sondaRobocza();
@@ -32,6 +33,7 @@ public class NowaKonsultacjaMieszkaniecKomentarz extends Bazowa {
         roboczaKonsultacja.trybKomentowania();
         roboczaKonsultacja.zapiszKomentarz();
         js.executeScript("window.scrollBy(0,500)");
+        Thread.sleep(1000);
         roboczaKonsultacja.publikujKomentarz();
         roboczaKonsultacja.utworz();
        }

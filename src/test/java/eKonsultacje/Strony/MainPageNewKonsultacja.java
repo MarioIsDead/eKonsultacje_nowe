@@ -31,8 +31,11 @@ public class MainPageNewKonsultacja extends Bazowa {
     @FindBy(xpath = "//select[@id='officeId']")
     WebElement jednostkaInput;
 
+    @FindBy (id = "districtId")
+    WebElement obszarInput;
+
     @FindBy(xpath = "//select[@id='thematicAreaId']")
-    WebElement obszarTematycznybtn;
+    WebElement kategoriaInput;
 
     @FindBy(id = "description")
     WebElement krotkiOpisButton;
@@ -260,17 +263,23 @@ public class MainPageNewKonsultacja extends Bazowa {
         jednostkaInput.sendKeys((Keys.ENTER));
     }
 
-    public void obszarTematyczny() {
-        obszarTematycznybtn.click();
-        obszarTematycznybtn.sendKeys(Keys.ARROW_DOWN);
-        obszarTematycznybtn.sendKeys((Keys.ENTER));
+    public void kategoria() {
+        kategoriaInput.click();
+        kategoriaInput.sendKeys(Keys.ARROW_DOWN);
+        kategoriaInput.sendKeys(Keys.ENTER);
+    }
+
+    public void obszar () {
+        obszarInput.click();
+        obszarInput.sendKeys(Keys.ARROW_DOWN);
+        obszarInput.sendKeys(Keys.ENTER);
     }
 
     public void krotkiOpis() {
         krotkiOpisButton.sendKeys("krotki opis");
     }
 
-    public void dataRozpoczeciaProjektu (String dataRozpoczecia, String dataZakonczenia) throws InterruptedException {
+    public void dataRozpoczeciaProjektu (String dataRozpoczecia, String dataZakonczenia) {
         dataRozpoczeciaProjektuBtn.click();
         dataRozpoczeciaProjektuBtn.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.BACK_SPACE));
         dataRozpoczeciaProjektuBtn.sendKeys(dataRozpoczecia);
@@ -313,11 +322,11 @@ public class MainPageNewKonsultacja extends Bazowa {
         dodajKomentarz.click();
     }
 
-    public void ankietaRobocza() throws InterruptedException {
+    public void ankietaRobocza() {
         amkietaRoboczaEdycja.click();
     }
 
-    public void dataRozpoczeciaGlosowania(String dataRozpoczecia, String dataZakonczenia) throws InterruptedException{
+    public void dataRozpoczeciaGlosowania(String dataRozpoczecia, String dataZakonczenia) {
         dataRozpoczeciaGlosowaniaBtn.click();
         dataRozpoczeciaGlosowaniaBtn.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         dataRozpoczeciaGlosowaniaBtn.sendKeys(dataRozpoczecia);
@@ -377,13 +386,13 @@ public class MainPageNewKonsultacja extends Bazowa {
     public void dodajCheckbox() {
         dodajCheckbox.click();
     }
-    public void pytanieCzwarte (String pytanieNr4) throws InterruptedException{
+    public void pytanieCzwarte (String pytanieNr4) {
         dodajPytanie4.sendKeys(pytanieNr4);
     }
     public void odpowiedzButton4 (){
         dodajOdpowiedz4.click();
     }
-    public void odpowiedzInput4 (String odpowiedzNr4)throws InterruptedException{
+    public void odpowiedzInput4 (String odpowiedzNr4) {
         dodajOdpowiedzInput4.sendKeys(odpowiedzNr4);
     }
     public void kolejnaOdpowiedz4 () {
@@ -392,7 +401,7 @@ public class MainPageNewKonsultacja extends Bazowa {
     public void dodaRankingowe() {
         dodajRankingowe.click();
     }
-    public void pytaniePiate (String pytanieNr5)throws InterruptedException {
+    public void pytaniePiate (String pytanieNr5) {
         dodajPytanie5.sendKeys(pytanieNr5);
         //dodajPytanie5.sendKeys(Keys.PAGE_UP);
     }
@@ -424,7 +433,7 @@ public class MainPageNewKonsultacja extends Bazowa {
         pokazOdpowiedziButton4.click();
     }
 
-    public void pytanieSzoste (String pytanieNr6) throws InterruptedException {
+    public void pytanieSzoste (String pytanieNr6) {
         dodajPytanie6.sendKeys(pytanieNr6);
     }
     public void odpowiedzButton6 (){
@@ -453,10 +462,10 @@ public class MainPageNewKonsultacja extends Bazowa {
             //helper.waitForElementToBeDisplayed(publikacjaAnkiety);
             ankietaPublikujBtn.click();
         }
-        public void sondaPublikuj () throws InterruptedException{
+        public void sondaPublikuj () {
             sondaPublikujBtn.click();
     }
-        public void zapiszAnkieta () throws InterruptedException {
+        public void zapiszAnkieta ()  {
             zapiszAnkietaBtn.click();
         }
         public void publikujKonsultacje () {
@@ -477,18 +486,11 @@ public class MainPageNewKonsultacja extends Bazowa {
         public void zapiszKomentarz (){
             zapiszKomentarzButton.click();
         }
-
         public void publikujKomentarz () {
-            By publikacjaKomentarz = By.xpath("//button[@class='btn btn-success btn-sm']");
-            helper.waitForElementToBeDisplayed(publikacjaKomentarz);
+            //By publikacjaKomentarz = By.xpath("//button[@class='btn btn-success btn-sm']");
+            //helper.waitForElementToBeDisplayed(publikacjaKomentarz);
             publikujKomentarzButton.click();
         }
-
-        public void ByPixel() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-500)");
-        }
-
         public void scrollUp () {
             dodajOdpowiedz.sendKeys((Keys.PAGE_UP));
         }
