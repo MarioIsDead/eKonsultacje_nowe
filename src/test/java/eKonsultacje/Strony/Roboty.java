@@ -17,7 +17,7 @@ public class Roboty extends Bazowa {
     @FindBy (xpath = "//div[@class='form-group']//div[@class='row']//div[@class='col-md-3']//div[@class='dropzone-wrapper dropzone-wrapper-sm']//div//button[@class='btn btn-primary'][contains(text(),'Wybierz plik')]")
     WebElement aktPrawnyButton;
 
-    @FindBy (xpath = "//body/div[@id='root']/div/div[@class='app-container app-theme-white fixed-header fixed-sidebar fixed-footer']/div[@class='app-main']/div[@class='app-main__outer']/div[@class='app-main__inner']/form/div[@class='mb-3 card']/div[@class='card-body']/div[@class='row']/div[@class='col-md-3']/div[@class='dropzone-wrapper dropzone-wrapper-sm']/div/div[@class='dropzone-content']/div[@class='dropzone-content__button mb-3']/button[1]")
+    @FindBy (xpath = "//button[contains(text(),'Wybierz plik')]")
     WebElement adZalacznik;
 
     public Roboty (WebDriver driver){

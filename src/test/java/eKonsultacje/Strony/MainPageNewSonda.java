@@ -56,10 +56,10 @@ public class MainPageNewSonda extends Bazowa {
     @FindBy (xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]")
     WebElement kolejnaOdpowiedzButton;
 
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/form[1]/div[3]/div[1]/button[1]")
+    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[2]/button[2]")
     WebElement utworzButton;
 
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]")
+    @FindBy (xpath = "//span[contains(text(),'Publikuj')]")
     WebElement publikujButton;
 
     @FindBy (xpath = "//span[contains(text(),'Tak')]")

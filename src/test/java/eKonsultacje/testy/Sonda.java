@@ -8,7 +8,7 @@ public class Sonda extends Bazowa {
 
     @Test
     public void logowanieUsera() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage stronaGlowna = new MainPage(driver);
@@ -29,7 +29,7 @@ public class Sonda extends Bazowa {
         roboczaSonda.dodajOdpowiedz();
         roboczaSonda.trescOdpowiedzi2();
         roboczaSonda.kolejnaOdpowiedz();
-        js.executeScript("window.scrollBy(0,200)");
+        js.executeScript("window.scrollBy(0,-500)");
         roboczaSonda.utworz();
        }
 }

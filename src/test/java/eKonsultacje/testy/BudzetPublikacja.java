@@ -11,13 +11,13 @@ import static org.testng.Assert.assertTrue;
 public class BudzetPublikacja extends Bazowa {
 
     @Test
-    public void publikacja() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+    public void BudzetPublikacja() throws InterruptedException {
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage budzetMenu = new MainPage(driver);
         budzetMenu.budzetObywatelski();
-        Assert.assertEquals(driver.findElement(By.cssSelector("div.app-container.app-theme-white.fixed-header.fixed-sidebar.fixed-footer:nth-child(2) div.app-main div.app-main__outer div.app-main__inner div.mb-3.card:nth-child(3) div.card-body div.d-flex.flex-column div.table-responsive.dx-g-bs4-table-container div:nth-child(1) table.table.dx-g-bs4-table tbody:nth-child(3) tr:nth-child(1) > td.dx-g-bs4-table-cell.text-nowrap:nth-child(5)")).getText(), "Roboczy");
+        Assert.assertEquals(driver.findElement(By.xpath("//td[contains(text(),'Roboczy')]")).getText(), "Roboczy");
         Thread.sleep(1000);
         budzetMenu.statusBudzetu();
         MainPageBudzet budzetPublikacja = new MainPageBudzet(driver);

@@ -7,8 +7,8 @@ import java.awt.*;
 public class Ankieta extends Bazowa {
 
     @Test
-    public void logowanieUsera() throws AWTException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+    public void Ankieta () throws AWTException {
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage stronaGlowna = new MainPage(driver);
@@ -36,7 +36,7 @@ public class Ankieta extends Bazowa {
         roboczaAnkieta.potwierdzOdpowiedz();
         js.executeScript("window.scrollBy(0,500)");
         Roboty dodawaniePliku = new Roboty(driver);
-        dodawaniePliku.zalacznik("C:\\Selenium\\apache-maven-3.6.0\\readme.txt");
+        dodawaniePliku.zalacznik("C:\\Selenium\\wniosek.pdf");
         js.executeScript("window.scrollBy(0,300)");
         roboczaAnkieta.utworz();
        }

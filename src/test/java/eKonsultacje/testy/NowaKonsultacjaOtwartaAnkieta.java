@@ -13,7 +13,7 @@ public class NowaKonsultacjaOtwartaAnkieta extends Bazowa {
 
     @Test
     public void logowanieUsera() throws AWTException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage konsultacjeMenu = new MainPage(driver);

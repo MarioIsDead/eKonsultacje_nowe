@@ -38,10 +38,10 @@ public class MainPage extends Bazowa {
     @FindBy(xpath = "//tbody//tr[1]//td[5]")
     WebElement statusBudzetu;
 
-    @FindBy(xpath = "//a[contains(text(),'owniki')]")
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[5]/div[1]/div[6]/ul[1]/li[1]/a[1]")
     WebElement slownikiMenu;
 
-    @FindBy(xpath = "//a[contains(text(),'Lata bud')]")
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[5]/div[1]/div[6]/ul[1]/li[1]/ul[1]/li[5]/a[1]")
     WebElement latabudzetoweMenu;
 
     @FindBy(xpath = "//a[contains(text(),'osowania')]")
@@ -108,7 +108,7 @@ public class MainPage extends Bazowa {
     }
 
     public void latabudzetowe() {
-        By latabudzetowe = By.xpath("//a[contains(text(),'Lata bud')]");
+        By latabudzetowe = By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[5]/div[1]/div[6]/ul[1]/li[1]/ul[1]/li[5]/a[1]");
         helper.waitForElementToBeDisplayed(latabudzetowe);
         latabudzetoweMenu.click();
         }

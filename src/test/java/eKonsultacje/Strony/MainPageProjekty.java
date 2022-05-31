@@ -25,10 +25,10 @@ public class MainPageProjekty extends Bazowa {
     @FindBy(id = "officeId")
     WebElement jednostkaLista;
 
-    @FindBy(xpath = "//option[contains(text(),'biec')]")
+    @FindBy(xpath = "//select[@id='districtId']")
     WebElement obszarDebiecLista;
 
-    @FindBy(xpath = "//option[contains(text(),'Kultura')]")
+    @FindBy(xpath = "//select[@id='officeThematicAreaId']")
     WebElement kategoriaLista;
 
     @FindBy(xpath = "//input[@id='cost']")
@@ -81,10 +81,14 @@ public class MainPageProjekty extends Bazowa {
 
     public void obszar() {
         obszarDebiecLista.click();
-    }
+        obszarDebiecLista.sendKeys(Keys.DOWN);
+        obszarDebiecLista.sendKeys(Keys.ENTER);
+            }
 
     public void kategoria() {
         kategoriaLista.click();
+        kategoriaLista.sendKeys(Keys.DOWN);
+        kategoriaLista.sendKeys(Keys.ENTER);
     }
 
     public void koszty() {

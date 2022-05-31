@@ -14,7 +14,7 @@ import java.util.Random;
 public class MainPageBudzet extends Bazowa {
 
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/button[1]")
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/button[1]")
     WebElement nowyBudzetButton;
 
     @FindBy(id = "title")

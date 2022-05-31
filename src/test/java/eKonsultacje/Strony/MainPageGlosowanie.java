@@ -14,7 +14,7 @@ public class MainPageGlosowanie extends Bazowa{
     @FindBy(xpath = "//input[@id='dateTo']")
     WebElement dataZakonczeniaGlosowaniaButton;
 
-    @FindBy (xpath = "//select[@id='agreementHistoryId']")
+    @FindBy (id = "agreementHistoryId")
     WebElement regulaminLista;
 
     @FindBy (xpath = "//label[contains(text(),'na stronie g')]")
@@ -50,7 +50,7 @@ public class MainPageGlosowanie extends Bazowa{
     @FindBy (xpath = "//input[@id='questionMaxPoint']")
     WebElement punktyNaProjektInput;
 
-    @FindBy (xpath = "//div[@id='category-heading-1']")
+    @FindBy (xpath = "//body/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/button[1]/h5[1]")
     WebElement kategoriaLista;
 
     @FindBy (xpath = "//li[1]//div[2]//div[1]//div[1]//div[1]")
@@ -82,7 +82,7 @@ public class MainPageGlosowanie extends Bazowa{
     public void dataZakonczeniaGlosowania (String dataZakonczenaGlosowania) {
         dataZakonczeniaGlosowaniaButton.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         dataZakonczeniaGlosowaniaButton.sendKeys(dataZakonczenaGlosowania);
-
+        dataZakonczeniaGlosowaniaButton.sendKeys(Keys.ENTER);
     }
 
     public void regulamin () {
@@ -99,7 +99,9 @@ public class MainPageGlosowanie extends Bazowa{
     }
 
     public void statusGlosowania (){
-        statusGlosowaniaTabela.click();
+        WebElement Roboczy = this.driver.findElement(By.xpath("Roboczy"));
+        Roboczy.click();
+        //statusGlosowaniaTabela.click();
     }
 
     public void przewijanieStrony (){

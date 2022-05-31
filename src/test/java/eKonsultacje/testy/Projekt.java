@@ -7,7 +7,7 @@ public class Projekt extends Bazowa {
 
     @Test
     public void publikacja() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage budzetMenu = new MainPage(driver);
@@ -21,7 +21,7 @@ public class Projekt extends Bazowa {
         projekty.obszar();
         projekty.kategoria();
         projekty.koszty();
-        projekty.rokBudzetowy("2053");
+        projekty.rokBudzetowy("2052");
         projekty.status();
         projekty.utworz();
         projekty.statusZatwierdzony();

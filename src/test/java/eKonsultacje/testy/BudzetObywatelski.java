@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 public class BudzetObywatelski extends Bazowa {
     @Test
-    public void logowanieUsera() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+    public void Budzet() throws InterruptedException {
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage stronaGlowna = new MainPage(driver);
@@ -17,11 +17,12 @@ public class BudzetObywatelski extends Bazowa {
         stronaGlowna.latabudzetowe();
         MainPageSlowniki nowySlownik = new MainPageSlowniki(driver);
         nowySlownik.tworzenieSlownika();
-        nowySlownik.nowyRokBudzetowy("2053");
+        nowySlownik.nowyRokBudzetowy("2052");
         nowySlownik.utworzNowyRokBudzetowy();
+        Thread.sleep(1000);
         stronaGlowna.latabudzetowe();
         Thread.sleep(1000);
-        Assert.assertEquals(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")).getText(),"2053");
+        Assert.assertEquals(driver.findElement(By.xpath("//td[contains(text(),'2052')]")).getText(),"2052");
         MainPageBudzet nowyBudzet = new MainPageBudzet(driver);
         stronaGlowna.budzetObywatelski();
         stronaGlowna.budzet();

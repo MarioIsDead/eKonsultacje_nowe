@@ -14,7 +14,7 @@ public class MainPageNewAnkieta extends Bazowa {
     @FindBy(xpath = "//input[@id='title']")
     WebElement nazwaProjektu;
 
-    @FindBy(xpath = "//button[@class='mb-2 mr-2 btn-icon btn btn-success']")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/button[1]")
     WebElement nowaAnkietaButton;
 
     @FindBy(xpath = "//label[contains(text(),'Otwarty')]")

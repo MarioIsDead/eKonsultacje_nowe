@@ -10,7 +10,7 @@ public class NowaKonsultacjaMieszkaniecAnkieta extends Bazowa {
 
     @Test
     public void KonsultacjaMieszkaniecAnkieta() throws InterruptedException, AWTException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage konsultacjeMenu = new MainPage(driver);
@@ -23,16 +23,16 @@ public class NowaKonsultacjaMieszkaniecAnkieta extends Bazowa {
         roboczaKonsultacja.obszar();
         roboczaKonsultacja.kategoria();
         roboczaKonsultacja.krotkiOpis();
-        roboczaKonsultacja.dataRozpoczeciaProjektu("2020-02-12","2020-02-29");
+        roboczaKonsultacja.dataRozpoczeciaProjektu("2022-05-19","2022-05-29");
         roboczaKonsultacja.regulamin();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500)");
+        js.executeScript("window.scrollBy(0,800)");
         Roboty dodawaniePliku = new Roboty(driver);
         roboczaKonsultacja.nowaForma();
         roboczaKonsultacja.ankieta();
         roboczaKonsultacja.ankietaRobocza();
         roboczaKonsultacja.opisAnkiety();
-        roboczaKonsultacja.dataRozpoczeciaGlosowania("2020-02-12","2020-02-29");
+        roboczaKonsultacja.dataRozpoczeciaGlosowania("2022-05-19","2022-05-29");
         roboczaKonsultacja.pytanie();
         roboczaKonsultacja.prosteRadio();
         roboczaKonsultacja.pytaniePierwsze("Czy zgadzasz się na... ?");

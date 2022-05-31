@@ -3,14 +3,17 @@ package eKonsultacje.testy;
 import eKonsultacje.Strony.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import javax.xml.xpath.XPath;
 
 public class GlosowaniePublikacja extends Bazowa {
 
     @Test
     public void publikacja() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage budzetMenu = new MainPage(driver);
@@ -18,8 +21,9 @@ public class GlosowaniePublikacja extends Bazowa {
         budzetMenu.glosowanie();
         MainPageGlosowanie glosowanie = new MainPageGlosowanie (driver);
         Thread.sleep(1000);
-        Assert.assertEquals(driver.findElement(By.xpath("//tbody//tr[1]//td[7]")).getText(),"Roboczy");
-        glosowanie.statusGlosowania();
+        WebElement Roboczy = this.driver.findElement(By.xpath("//td[contains(text(),'Roboczy')]"));
+        Roboczy.click();
+        Thread.sleep(1000);
         glosowanie.przewijanieStrony();
         glosowanie.dodajNowyObszar();
         glosowanie.obszar();

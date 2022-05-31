@@ -15,7 +15,7 @@ public class MainPageSlowniki extends Bazowa {
     @FindBy(xpath = "//input[@id='year']")
     WebElement nowyRokBudzetowyInput;
 
-    @FindBy (xpath = "//button[@class='btn-icon btn btn-primary']")
+    @FindBy (xpath = "//body/div[@id='root']/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/button[1]")
     WebElement utworzNowyRokButton;
 
     public MainPageSlowniki(WebDriver driver) {

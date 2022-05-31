@@ -13,15 +13,16 @@ import static org.testng.Assert.assertTrue;
 public class AnkietaPublikacja extends Bazowa {
 
     @Test
-    public void publikacja() throws InterruptedException {
-        driver.get("http://ekonsultacje.eboi.pl:5004");
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+    public void AnkietaPub() throws InterruptedException {
+        driver.get("https://test-ekonsultacje-old-bo.eboi.pl:7443");
+        //WebDriverWait wait = new WebDriverWait(driver, 100);
         driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
         stronaLogowania logowanie = new stronaLogowania(driver);
         logowanie.zalogowanie();
         MainPage ankietaMenu = new MainPage(driver);
         ankietaMenu.ankietyLink();
-        Assert.assertEquals(driver.findElement(By.xpath("//tbody//tr[1]//td[7]")).getText(), "Roboczy");
+        //driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+        Assert.assertEquals(driver.findElement(By.xpath("//td[contains(text(),'Roboczy')]")).getText(), "Roboczy");
         Thread.sleep(1000);
         ankietaMenu.statusSondy();
         MainPageNewAnkieta ankietaPublikacja = new MainPageNewAnkieta(driver);

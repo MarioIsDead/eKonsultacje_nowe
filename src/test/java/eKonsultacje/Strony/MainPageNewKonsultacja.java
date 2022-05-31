@@ -178,7 +178,7 @@ public class MainPageNewKonsultacja extends Bazowa {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/button[2]")
     WebElement ankietaPublikujBtn;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/button[2]")
+    @FindBy(xpath = "//button[contains(text(),'Publikuj')]")
     WebElement sondaPublikujBtn;
 
     @FindBy(css = "div.container-fluid div.row main.col-md-9.ml-sm-auto.col-lg-10 div.sublist.sublist-vertical:nth-child(2) div.form-row:nth-child(2) div.col:nth-child(2) div.btn-toolbar div.btn-group:nth-child(1) > button.btn.btn-primary.btn-sm")
