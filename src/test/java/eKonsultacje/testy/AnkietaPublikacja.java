@@ -22,7 +22,7 @@ public class AnkietaPublikacja extends Bazowa {
         MainPage ankietaMenu = new MainPage(driver);
         ankietaMenu.ankietyLink();
         //driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
-        Assert.assertEquals(driver.findElement(By.xpath("//td[contains(text(),'Roboczy')]")).getText(), "Roboczy");
+        //Assert.assertEquals(driver.findElement(By.xpath("//td[contains(text(),'Roboczy')]")).getText(), "Roboczy");
         Thread.sleep(1000);
         ankietaMenu.statusSondy();
         MainPageNewAnkieta ankietaPublikacja = new MainPageNewAnkieta(driver);
